@@ -1,6 +1,6 @@
 package datastructure;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class UseMap {
 
@@ -10,11 +10,26 @@ public class UseMap {
          * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
          * Use For Each loop and while loop with Iterator to retrieve data.
          *
-         * Use MySql Database to store data and retrieve data.
+         * Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.
          */
-        HashMap<String, String> informationMap= new HashMap<>();
+
+        Map<String, List<String>> ls = new HashMap<>();
+
+        ls.put("USA", Collections.singletonList("NY"));
+        ls.put("India", Collections.singletonList("Kolkata"));
+        ls.put("France", Collections.singletonList("Orleans"));
+        ls.put("Pakistan", Collections.singletonList("Islamabad"));
+        ls.put("Canada", Collections.singletonList("Toronto"));
 
 
+        for(String s:ls.keySet());
+
+        Set set = ls.entrySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()) {
+            Map.Entry map1 = (Map.Entry) iterator.next();
+            System.out.print("key is: " + map1.getKey() + " & Value is: ");
+            System.out.println(map1.getValue());
+        }
     }
-
 }
